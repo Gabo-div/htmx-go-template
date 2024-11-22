@@ -1,0 +1,7 @@
+tmp
+.env
+node_modules
+
+static/js
+static/css
+*_templ.txt

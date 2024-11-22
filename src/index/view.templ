@@ -1,0 +1,24 @@
+package index
+
+import (
+	"just-html/src/shared"
+	"strconv"
+)
+
+templ Index(count int) {
+	@shared.Layout() {
+		<main class="bg-base-100 text-zinc-100 w-full h-screen flex flex-col space-y-4 items-center justify-center">
+			<h1 class="text-4xl font-bold">Counter</h1>
+			<button class="btn btn-outline" hx-get="/counter" hx-target="#counter" hx-swap="outerHTML">
+				Increment
+			</button>
+			@Counter(count)
+		</main>
+	}
+}
+
+templ Counter(count int) {
+	<div id="counter" class="font-medium text-lg">
+		count: { strconv.Itoa(count) }
+	</div>
+}
